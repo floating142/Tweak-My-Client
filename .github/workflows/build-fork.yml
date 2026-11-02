@@ -1,0 +1,17 @@
+name: Build Fork
+
+on:
+  push:
+    branches:
+      - feat/mc-26.3
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      build_publish: false
+      build_version_type: FORK
